@@ -1,34 +1,35 @@
-// Looker Studioのデータ購読用ライブラリを使う想定
-// 実運用だと https://developers.google.com/looker-studio/visualization/library で読み込みますが
-// ここでは最小イメージです。
+// Looker Studio からデータを受け取って描画する処理
+const dscc = require('dscc'); // Looker Studio からデータ購読するためのライブラリ
 
-function drawChart(data) {
-  const container = document.getElementById('chart-container');
-  const canvas = document.getElementById('chart');
-  const ctx = canvas.getContext('2d');
+function drawViz(data) {
+  const ctx = document.getElementById('chart').getContext('2d');
 
-  // --- LookerからのオブジェクトをChart.js向けに変換する想定 ---
-  // 今はダミーで表示しておく
-  const labels = ['価格', '品質', 'サポート', 'デザイン', '速度'];
-  const datasets = [
-    {
-      label: 'サンプル',
-      data: [4, 5, 3, 5, 4],
-      fill: true
-    }
-  ];
+  // LookerからのデータをChart.js形式に変換
+  const labels = data.fields.metrics.map(m => m.name);
+  const datasets = data.tables.DEFAULT.map((row, i) => ({
+    label: row.dimension[0],
+    data: row.metrics,
+    fill: true
+  }));
 
   new Chart(ctx, {
     type: 'radar',
     data: { labels, datasets },
     options: {
       responsive: true,
-      maintainAspectRatio: false
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: data.style.showLegend }
+      },
+      scales: {
+        r: {
+          suggestedMin: data.style.scaleMin,
+          suggestedMax: data.style.scaleMax
+        }
+      }
     }
   });
 }
 
-// とりあえず即時に描画しておく（後でdscc.subscribeToDataに差し替える）
-window.addEventListener('load', () => {
-  drawChart();
-});
+// Looker Studio からデータ購読
+dscc.subscribeToData(drawViz, { transform: dscc.objectTransform });
