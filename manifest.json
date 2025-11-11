@@ -1,34 +1,18 @@
 {
-  "visualization": {
-    "id": "custom_radar_chart",
-    "label": "Custom Radar Chart",
-    "description": "Radar chart built with Chart.js",
-    "resources": [
-      {
-        "type": "js",
-        "url": "index.js"
-      },
-      {
-        "type": "html",
-        "url": "index.html"
+  "name": "Custom Radar Chart",
+  "organization": "your-org",
+  "description": "Radar chart (あなた vs 社内平均)",
+  "devMode": true,
+  "components": [
+    {
+      "id": "radar",
+      "name": "Radar Chart",
+      "description": "Radar chart with Chart.js",
+      "resource": {
+        "js": "https://storage.googleapis.com/YOUR_BUCKET/index.js",
+        "html": "https://storage.googleapis.com/YOUR_BUCKET/index.html",
+        "config": "https://storage.googleapis.com/YOUR_BUCKET/config.json"
       }
-    ]
-  },
-  "options": {
-    "showLegend": {
-      "label": "凡例を表示する",
-      "type": "BOOLEAN",
-      "default": true
-    },
-    "scaleMin": {
-      "label": "スケール最小値",
-      "type": "NUMBER",
-      "default": 0
-    },
-    "scaleMax": {
-      "label": "スケール最大値",
-      "type": "NUMBER",
-      "default": 5
     }
-  }
+  ]
 }
