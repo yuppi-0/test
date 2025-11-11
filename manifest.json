@@ -1,0 +1,35 @@
+{
+  "visualization": {
+    "id": "custom_radar_chart",
+    "label": "Custom Radar Chart",
+    "description": "Radar chart built with Chart.js",
+    "logoUrl": "",
+    "resources": [
+      {
+        "type": "js",
+        "url": "index.js"
+      }
+    ],
+    "supportedDataTypes": ["TABLE"]
+  },
+  "requiredFields": {
+    "dimensions": [
+      {
+        "id": "dimension",
+        "name": "Item",
+        "description": "Name of item",
+        "min": 1,
+        "max": 1
+      }
+    ],
+    "metrics": [
+      {
+        "id": "metrics",
+        "name": "Scores",
+        "description": "Values for radar",
+        "min": 2,
+        "max": 10
+      }
+    ]
+  }
+}
