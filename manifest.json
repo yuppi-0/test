@@ -3,33 +3,32 @@
     "id": "custom_radar_chart",
     "label": "Custom Radar Chart",
     "description": "Radar chart built with Chart.js",
-    "logoUrl": "",
     "resources": [
       {
         "type": "js",
         "url": "index.js"
-      }
-    ],
-    "supportedDataTypes": ["TABLE"]
-  },
-  "requiredFields": {
-    "dimensions": [
+      },
       {
-        "id": "dimension",
-        "name": "Item",
-        "description": "Name of item",
-        "min": 1,
-        "max": 1
-      }
-    ],
-    "metrics": [
-      {
-        "id": "metrics",
-        "name": "Scores",
-        "description": "Values for radar",
-        "min": 2,
-        "max": 10
+        "type": "html",
+        "url": "index.html"
       }
     ]
+  },
+  "options": {
+    "showLegend": {
+      "label": "凡例を表示する",
+      "type": "BOOLEAN",
+      "default": true
+    },
+    "scaleMin": {
+      "label": "スケール最小値",
+      "type": "NUMBER",
+      "default": 0
+    },
+    "scaleMax": {
+      "label": "スケール最大値",
+      "type": "NUMBER",
+      "default": 5
+    }
   }
 }
