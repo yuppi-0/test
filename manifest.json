@@ -9,9 +9,9 @@
       "name": "Radar Chart",
       "description": "Radar chart with Chart.js",
       "resource": {
-        "js": "https://storage.googleapis.com/YOUR_BUCKET/index.js",
-        "html": "https://storage.googleapis.com/YOUR_BUCKET/index.html",
-        "config": "https://storage.googleapis.com/YOUR_BUCKET/config.json"
+        "js": "https://storage.googleapis.com/viz-radar-chart-us/index.js",
+        "html": "https://storage.googleapis.com/viz-radar-chart-us/index.html",
+        "config": "https://storage.googleapis.com/viz-radar-chart-us/config.json"
       }
     }
   ]
