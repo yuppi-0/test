@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Radar Chart Visualization</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+
+    <script src="https://storage.googleapis.com/looker-studio-codelabs/dscc.js"></script>
+
+    <script src="./index.js" defer></script>
+
+    <style>
+      /* コンテナとキャンバスが領域全体に広がるように設定 */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+      #chart-container {
+        width: 100%;
+        height: 100%;
+      }
+      /* Chart.jsが生成するcanvasタグのサイズをコンテナに合わせる */
+      canvas {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chart-container">
+      <canvas id="chart"></canvas>
+    </div>
+  </body>
+</html>
