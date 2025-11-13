@@ -1,29 +1,33 @@
 {
-  "data": [{
-    "id": "fields",
-    "label": "データ",
-    "elements": [
-      {
-        "id": "dimension",
-        "label": "項目",
-        "type": "DIMENSION",
-        "options": { "min": 1, "max": 1 }
-      },
-      {
-        "id": "metrics",
-        "label": "指標（あなた・社内平均など）",
-        "type": "METRIC",
-        "options": { "min": 2, "max": 5 }
-      }
-    ]
-  }],
-  "style": [{
-    "id": "general",
-    "label": "一般",
-    "elements": [
-      { "id": "showLegend", "label": "凡例を表示", "type": "CHECKBOX", "defaultValue": true },
-      { "id": "min", "label": "最小値", "type": "NUMBER", "defaultValue": 0 },
-      { "id": "max", "label": "最大値", "type": "NUMBER", "defaultValue": 4 }
-    ]
-  }]
+  "data": [
+    {
+      "id": "fields",
+      "label": "データ",
+      "elements": [
+        {
+          "id": "dimension",
+          "label": "項目",
+          "type": "DIMENSION",
+          "options": { "min": 1, "max": 1 }
+        },
+        {
+          "id": "metrics",
+          "label": "指標（あなた・社内平均など）",
+          "type": "METRIC",
+          "options": { "min": 2, "max": 5 }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "general",
+      "label": "一般",
+      "elements": [
+        { "id": "showLegend", "label": "凡例を表示", "type": "CHECKBOX", "defaultValue": true },
+        { "id": "min", "label": "最小値", "type": "NUMBER", "defaultValue": 0 },
+        { "id": "max", "label": "最大値", "type": "NUMBER", "defaultValue": 4 }
+      ]
+    }
+  ]
 }
